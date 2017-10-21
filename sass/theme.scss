@@ -7,7 +7,6 @@ body {
 
 header {
   height: 75px;
-
   .brand-logo {
     padding: 10px 0;
 
@@ -23,8 +22,188 @@ header {
   text-transform: uppercase;
   color: #fff;
 }
+
+.navbar-toggler {
+  border-color: rgba(224,183,77, 0.5);
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(224,183,77, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+}
+
+.btn-theme {
+  border: 2px solid $special-yellow;
+  color: $special-yellow;
+  background: none;
+  padding: 5px;
+  min-width: 100px;
+  height: 40px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+#banner {
+  height: 200px;
+  width: 100%;
+  text-align: center;
+  background: grey;
+  p {
+    color: $special-yellow;
+    font-weight: bold;
+    font-size: 1.3em;
+  }
+  h1 {
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 70px;
+  }
+}
+
+#beerOfTheMonth {
+  .beerDescription {
+    background: white;
+    color: $primary-color;
+
+    h2 {
+      margin-top: 15px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    hr {
+      width: 30%;
+      margin-top: 0;
+      border: 2px solid $special-yellow
+    }
+
+    dl {
+      text-align: left;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    dt {
+      color: $special-yellow;
+      width: 42%;
+    }
+    dd {
+      font-weight: bold;
+      width: 58%;
+    }
+
+    text-align: center;
+    .btn-theme {
+      margin-bottom: 15px;
+    }
+
+  }
+  .beerOfTheMonthPicture {
+    display: none;
+  }
+}
+
+#lastArticleMain {
+  display: flex;
+  flex-flow: column nowrap;
+  article {
+    position: relative;
+    height: 400px;
+    .background {
+
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      opacity: 0.5;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+    .text {
+      position: absolute;
+      padding-top: 15px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    h2 {
+      color: $special-yellow;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-align: center;
+      opacity: 1;
+    }
+    p {
+      text-align: justify;
+      opacity: 1;
+    }
+    button {
+      position: absolute;
+      bottom: 50px;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      opacity: 1;
+    }
+  }
+}
+
+footer {
+  height: 500px;
+  padding-top: 20px;
+  .row {
+    height: 100%;
+  }
+  h2 {
+    color: $special-yellow;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.2em;
+  }
+  div.col-md-4 {
+    text-align: center;
+    height: 33.333%;
+    p {
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+  }
+  #footer-menu {
+    padding: 0;
+    li {
+      text-transform: uppercase;
+      list-style: none;
+      a {
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+  }
+  .social-share {
+    a {
+      color: $primary-color;
+      font-size: 1.5em;
+
+      height: 35px;
+      width: 35px;
+      line-height: 35px;
+      border-radius: 50%;
+      margin: 15px 30px;
+      background: white;
+      display: inline-block;
+    }
+  }
+}
+
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+}
+
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   header {
@@ -39,13 +218,66 @@ header {
     }
   }
 
-  #navbarNavDropdown{
-    display:flex;
+  #navbarNavDropdown {
+    display: flex;
     justify-content: center;
   }
 
+  #banner {
+    padding-top: 50px;
+    height: 400px;
+    h1 {
+      font-size: 150px;
+    }
+  }
+
+  #beerOfTheMonth {
+    padding: 5% 10%;
+
+    .beerOfTheMonthPicture {
+      display: block;
+      padding: 0;
+      img {
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+
+  #lastArticleMain {
+    display: flex;
+    flex-flow: row wrap;
+    article {
+      width: 50%;
+    }
+    article:last-of-type {
+      width: 100%;
+      .text {
+        padding: 15px 10%;
+      }
+    }
+  }
+
+  footer {
+    height: 300px;
+  }
 }
+
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+  #lastArticleMain {
+    article {
+      width: 33.333%;
+    }
+    article:last-of-type {
+      width: 33.333%;
+      .text {
+        padding: 15px;
+      }
+    }
+  }
+}
+
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+}
