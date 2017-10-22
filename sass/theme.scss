@@ -1,8 +1,11 @@
 @import "theme/theme_variables"; // <--------- Add your variables into this file. Also add variables to overwrite Bootstrap variables here
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400');
 
 body {
   background: $primary-color;
   color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 300;
 }
 
 header {
@@ -14,6 +17,18 @@ header {
       height: 50px;
       width: auto;
     }
+  }
+}
+
+main{
+  min-height: 80vh;
+}
+
+#navbarNavDropdown{
+  font-weight: 400;
+  letter-spacing:1.5px;
+  a.nav-link:hover{
+    color:$special-yellow;
   }
 }
 
@@ -37,15 +52,24 @@ header {
   padding: 5px;
   min-width: 100px;
   height: 40px;
-  text-transform: capitalize;
+  text-transform: uppercase;
   font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.btn-theme:hover{
+  background: $primary-color;
+  opacity: 0.8;
+  color:$special-yellow;
+  text-decoration: none;
 }
 
 #banner {
   height: 200px;
   width: 100%;
   text-align: center;
-  background: grey;
+  background: url('../img/beerBanner.jpg') no-repeat fixed center;
+  background-size: cover;
   p {
     color: $special-yellow;
     font-weight: bold;
@@ -53,8 +77,8 @@ header {
   }
   h1 {
     text-transform: uppercase;
-    font-weight: lighter;
     font-size: 70px;
+    letter-spacing:1px;
   }
 }
 
@@ -67,6 +91,8 @@ header {
       margin-top: 15px;
       font-weight: bold;
       text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 1px;
     }
 
     hr {
@@ -81,13 +107,13 @@ header {
       flex-direction: row;
       width: 100%;
       flex-wrap: wrap;
+      letter-spacing: 1px;
     }
     dt {
       color: $special-yellow;
       width: 42%;
     }
     dd {
-      font-weight: bold;
       width: 58%;
     }
 
@@ -141,7 +167,10 @@ header {
       text-align: justify;
       opacity: 1;
     }
-    button {
+    a.btn-theme {
+      display:block;
+      width: 150px;
+      text-align: center;
       position: absolute;
       bottom: 50px;
       margin-left: auto;
@@ -155,7 +184,7 @@ header {
 
 footer {
   height: 500px;
-  padding-top: 20px;
+  padding-top: 40px;
   .row {
     height: 100%;
   }
@@ -234,7 +263,10 @@ footer {
   #beerOfTheMonth {
     padding: 5% 10%;
 
+
+
     .beerOfTheMonthPicture {
+      max-height: 360px;
       display: block;
       padding: 0;
       img {
@@ -248,12 +280,16 @@ footer {
     display: flex;
     flex-flow: row wrap;
     article {
+      height: 600px;
       width: 50%;
+      .text{
+        padding: 20%;
+      }
     }
     article:last-of-type {
       width: 100%;
       .text {
-        padding: 15px 10%;
+        padding: 15px 15%;
       }
     }
   }
@@ -272,7 +308,7 @@ footer {
     article:last-of-type {
       width: 33.333%;
       .text {
-        padding: 15px;
+        padding: 20%;
       }
     }
   }

@@ -21,3 +21,6 @@ if (!function_exists('init_script_and_style')) {
 
     add_action('wp_enqueue_scripts', 'init_script_and_style');
 }
+
+//plugin loading
+require 'plugin/beerofthemonth.php';

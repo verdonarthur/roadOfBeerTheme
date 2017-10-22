@@ -22,7 +22,7 @@
 		<!-- Your site title as branding in the menu -->
 		<?php if ( ! has_custom_logo() ) { ?>
 			<div class="brand-logo d-flex justify-content-center">
-				<img src="http://via.placeholder.com/250x250" alt="brand logo">
+				<img src="<?php print get_template_directory_uri() . "/img/RouteBieresLogo.png" ?>" alt="brand logo">
 			</div>
 		<?php } else {
 			the_custom_logo();

@@ -9,8 +9,7 @@ get_header();
 ?>
 
 
-<div class="<?php echo esc_attr($container); ?>">
-
+<div>
     <main>
         <section id="banner" class="container-fluid">
             <p>Découvrez l'art de</p>
@@ -20,68 +19,55 @@ get_header();
         <section id="beerOfTheMonth" class="container-fluid">
             <div class="row">
                 <div class="col-md beerDescription">
-                    <h2>La bière du mois</h2>
+                    <?php
+                    $beer = get_beerofthemonth();
+                    ?>
+
+                    <h2><?php echo $beer[0] ?></h2>
                     <hr>
                     <dl>
                         <dt>BRASSERIE :</dt>
-                        <dd>Docteur gabs</dd>
+                        <dd><?php echo $beer[2] ?></dd>
                         <dt>FABRICATION :</dt>
-                        <dd>Triple</dd>
+                        <dd><?php echo $beer[3] ?></dd>
                         <dt>LIEU :</dt>
-                        <dd>La claie-aux-moines</dd>
+                        <dd><?php echo $beer[4] ?></dd>
                         <dt>TYPE :</dt>
-                        <dd>Ambrée</dd>
+                        <dd><?php echo $beer[5] ?></dd>
                     </dl>
-                    <button class="btn-theme">En savoir plus</button>
+                    <a class="btn-theme" href="<?php echo $beer[8] ?>">En savoir plus</a>
                 </div>
                 <div class="col-md beerOfTheMonthPicture">
-                    <img src="http://via.placeholder.com/250x250">
+                    <img src="<?php echo $beer[6][0] ?>">
                 </div>
             </div>
         </section>
         <section id="lastArticleMain">
-            <article class="container-fluid">
-                <div class="background"
-                     style="background-image: url('<?php print get_template_directory_uri() . "/img/beer-820011_640.jpg" ?>')"></div>
-                <div class="text container-fluid">
-                    <h2>test</h2>
-                    <p>Bière pression ou bière bouteille?
-                        Certains d’entre vous sont peut-être
-                        déjà tombés sur ce dilemne. Voilà un
-                        article qui va vous donnez envie de
-                        toujours choisir une bonne bière à la
-                        pression !</p>
-                    <button class="btn-theme">En savoir plus</button>
-                </div>
-            </article>
-            <article class="container-fluid">
-                <div class="background "
-                     style="background-image: url('<?php print get_template_directory_uri() . "/img/beer-820011_640.jpg" ?>')"></div>
-                <div class="text container-fluid">
-                    <h2>test</h2>
-                    <p>Bière pression ou bière bouteille?
-                        Certains d’entre vous sont peut-être
-                        déjà tombés sur ce dilemne. Voilà un
-                        article qui va vous donnez envie de
-                        toujours choisir une bonne bière à la
-                        pression !</p>
-                    <button class="btn-theme">En savoir plus</button>
-                </div>
-            </article>
-            <article class="container-fluid">
-                <div class="background"
-                     style="background-image: url('<?php print get_template_directory_uri() . "/img/beer-820011_640.jpg" ?>')"></div>
-                <div class="text container-fluid">
-                    <h2>test</h2>
-                    <p>Bière pression ou bière bouteille?
-                        Certains d’entre vous sont peut-être
-                        déjà tombés sur ce dilemne. Voilà un
-                        article qui va vous donnez envie de
-                        toujours choisir une bonne bière à la
-                        pression !</p>
-                    <button class="btn-theme">En savoir plus</button>
-                </div>
-            </article>
+            <?php $args = array(
+                'orderby' => 'date',
+                'order' => 'DESC',
+                'showposts' => 3,
+            );
+            $query = new WP_Query($args);
+            ?>
+
+            <?php if ($query->have_posts()) : ?>
+                <?php while ($query->have_posts()) : $query->the_post(); ?>
+                    <article class="container-fluid">
+                        <div class="background"
+                             style="background-image: url('<?php echo get_the_post_thumbnail_url();?>') "></div>
+                        <div class="text container-fluid">
+                            <h2><?php the_title(); ?></h2>
+                            <p><?php the_content(); ?></p>
+                            <a class="btn-theme" href="<?php echo wp_get_shortlink(); ?> ">En savoir plus</a>
+                        </div>
+
+                    </article>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php else : ?>
+                <p><?php esc_html_e('Sorry, no posts matched your criteria.'); ?></p>
+            <?php endif; ?>
 </div>
 </section>
 
