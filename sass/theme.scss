@@ -38,6 +38,10 @@ main{
   color: #fff;
 }
 
+.dropdown-menu{
+  background: $primary-color;
+}
+
 .navbar-toggler {
   border-color: rgba(224,183,77, 0.5);
   .navbar-toggler-icon {
@@ -84,6 +88,7 @@ main{
 
 #beerOfTheMonth {
   .beerDescription {
+    min-height: 300px;
     background: white;
     color: $primary-color;
 

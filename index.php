@@ -5,7 +5,6 @@
  */
 
 get_header();
-
 ?>
 
 
@@ -18,7 +17,7 @@ get_header();
         </section>
         <section id="beerOfTheMonth" class="container-fluid">
             <div class="row">
-                <div class="col-md beerDescription">
+                <div class="offset-md-1 col-md-5 beerDescription">
                     <?php
                     $beer = get_beerofthemonth();
                     ?>
@@ -37,7 +36,7 @@ get_header();
                     </dl>
                     <a class="btn-theme" href="<?php echo $beer[8] ?>">En savoir plus</a>
                 </div>
-                <div class="col-md beerOfTheMonthPicture">
+                <div class="col-md-6 beerOfTheMonthPicture">
                     <img src="<?php echo $beer[6][0] ?>">
                 </div>
             </div>
@@ -58,7 +57,7 @@ get_header();
                              style="background-image: url('<?php echo get_the_post_thumbnail_url();?>') "></div>
                         <div class="text container-fluid">
                             <h2><?php the_title(); ?></h2>
-                            <p><?php the_content(); ?></p>
+                            <p><?php echo wp_trim_words(get_the_content(),55,'...'); ?></p>
                             <a class="btn-theme" href="<?php echo wp_get_shortlink(); ?> ">En savoir plus</a>
                         </div>
 
