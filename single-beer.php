@@ -35,7 +35,7 @@ get_header();
                 <div class="col-md-8">
                     <h1 class="post-title"><?php the_title(); ?></h1>
                     <p class="post-info">
-                        Posté le <?php the_date(); ?> dans <?php the_category(', '); ?> par <?php the_author(); ?>.
+                        Posté le <?php the_date(); ?>
                     </p>
                     <div class="post-content">
                         <p><?php echo $beer_description ?></p>

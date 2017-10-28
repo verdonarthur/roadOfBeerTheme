@@ -6,6 +6,12 @@ body {
   color: #fff;
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
+  a{
+    color:$special-yellow;
+  }
+  a:hover{
+    color:$special-yellow;
+  }
 }
 
 header {
@@ -88,7 +94,8 @@ main{
 
 #beerOfTheMonth {
   .beerDescription {
-    min-height: 300px;
+    position:relative;
+    min-height: 450px;
     background: white;
     color: $primary-color;
 
@@ -124,7 +131,9 @@ main{
 
     text-align: center;
     .btn-theme {
-      margin-bottom: 15px;
+      position:absolute;
+      bottom: 15px;
+      right:15px;
     }
 
   }
@@ -188,7 +197,7 @@ main{
 }
 
 footer {
-  height: 500px;
+  min-height: 500px;
   padding-top: 40px;
   .row {
     height: 100%;

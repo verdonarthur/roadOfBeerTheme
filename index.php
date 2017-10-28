@@ -13,7 +13,7 @@ get_header();
         <section id="banner" class="container-fluid">
             <p>Découvrez l'art de</p>
             <h1>La bière</h1>
-            <button class="btn-theme">Devenir membre</button>
+            <a class="btn-theme" href="<?php echo get_page_uri(42)?>">Devenir membre</a>
         </section>
         <section id="beerOfTheMonth" class="container-fluid">
             <div class="row">
@@ -22,7 +22,7 @@ get_header();
                     $beer = get_beerofthemonth();
                     ?>
 
-                    <h2><?php echo $beer[0] ?></h2>
+                    <h2>Bière du mois : <?php echo $beer[0] ?></h2>
                     <hr>
                     <dl>
                         <dt>BRASSERIE :</dt>
