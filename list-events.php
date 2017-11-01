@@ -26,7 +26,8 @@ get_header();
                 ?>
                 <article class="card text-black" style="color:black;border:none;">
                     <?php if (!empty(get_the_post_thumbnail_url())) : ?>
-                        <img class="card-img-top" src="<?php echo get_the_post_thumbnail_url(); ?>"/>
+                        <img class="card-img-top" src="<?php echo get_the_post_thumbnail_url(); ?>"
+                             alt="<?php echo get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true); ?>">
                     <?php endif; ?>
                     <div class="card-body">
                         <h2 class="card-title"><?php the_title(); ?></h2>

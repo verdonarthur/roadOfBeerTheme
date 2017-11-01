@@ -13,7 +13,7 @@ get_header();
         <section id="banner" class="container-fluid">
             <p>Découvrez l'art de</p>
             <h1>La bière</h1>
-            <a class="btn-theme" href="<?php echo get_page_uri(42)?>">Devenir membre</a>
+            <a class="btn-theme" href="<?php echo get_page_uri(42) ?>">Devenir membre</a>
         </section>
         <section id="beerOfTheMonth" class="container-fluid">
             <div class="row">
@@ -37,7 +37,8 @@ get_header();
                     <a class="btn-theme" href="<?php echo $beer[8] ?>">En savoir plus</a>
                 </div>
                 <div class="col-md-6 beerOfTheMonthPicture">
-                    <img src="<?php echo $beer[6][0] ?>">
+                    <img src="<?php echo wp_get_attachment_image_src($beer[6], 'full')[0]; ?>"
+                         alt="<?php echo get_post_meta($beer[6], '_wp_attachment_image_alt', true); ?>">
                 </div>
             </div>
         </section>
@@ -54,10 +55,10 @@ get_header();
                 <?php while ($query->have_posts()) : $query->the_post(); ?>
                     <article class="container-fluid">
                         <div class="background"
-                             style="background-image: url('<?php echo get_the_post_thumbnail_url();?>') "></div>
+                             style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>') "></div>
                         <div class="text container-fluid">
                             <h2><?php the_title(); ?></h2>
-                            <p><?php echo wp_trim_words(get_the_content(),55,'...'); ?></p>
+                            <p><?php echo wp_trim_words(get_the_content(), 55, '...'); ?></p>
                             <a class="btn-theme" href="<?php echo wp_get_shortlink(); ?> ">En savoir plus</a>
                         </div>
 

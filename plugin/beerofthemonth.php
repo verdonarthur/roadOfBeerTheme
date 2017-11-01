@@ -307,13 +307,10 @@ function get_beerofthemonth() {
             // See if there's a media id already saved as post meta
             $beer_picture = esc_html(get_post_meta(get_the_ID(), 'beer_picture', true));
 
-            // Get the image src
-            $beer_picture_src = wp_get_attachment_image_src($beer_picture, 'full');
-
             $beer_description = esc_html(get_post_meta(get_the_ID(), 'beer_description', true));
 
             $beerofthemonth = array(get_the_title(), $isbeerofthemonth, $beer_brewery, $beer_fabrication,
-                $beer_location, $beer_type, $beer_picture_src, $beer_description,get_permalink(get_the_ID()));
+                $beer_location, $beer_type, $beer_picture, $beer_description,get_permalink(get_the_ID()));
         }
 
         wp_reset_postdata();

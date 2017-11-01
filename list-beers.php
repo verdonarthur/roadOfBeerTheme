@@ -34,10 +34,16 @@ get_header();
 
                 $beer_description = esc_html(get_post_meta(get_the_ID(), 'beer_description', true));
 
+                $image_alt = get_post_meta( $beer_picture, '_wp_attachment_image_alt', true);
+
+                if ( empty( $image_alt )) {
+                    $image_alt = get_the_title();;
+                }
+
                 ?>
                 <article class="card text-black" style="color:black;border:none;">
                     <?php if (is_array($beer_picture_src)) : ?>
-                        <img class="card-img-top" src="<?php echo $beer_picture_src[0] ?>"/>
+                        <img class="card-img-top" src="<?php echo $beer_picture_src[0] ?> " alt="<?php echo $image_alt; ?>"/>
                     <?php endif; ?>
                     <div class="card-body">
                         <h2 class="card-title"><?php the_title(); ?></h2>

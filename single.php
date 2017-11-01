@@ -11,18 +11,19 @@ get_header();
         <article class="row">
             <?php while (have_posts()) : the_post(); ?>
                 <?php ?>
-            <div class="col-md-4" >
-                <img src="<?php echo get_the_post_thumbnail_url();?>" class="img-fluid">
-            </div>
-            <div class="col-md-8">
-                <h1 class="post-title"><?php the_title(); ?></h1>
-                <p class="post-info">
-                    Posté le <?php the_date(); ?>
-                </p>
-                <div class="post-content">
-                    <?php the_content(); ?>
+                <div class="col-md-4">
+                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="img-fluid"
+                         alt="<?php echo get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true); ?>">
                 </div>
-            </div>
+                <div class="col-md-8">
+                    <h1 class="post-title"><?php the_title(); ?></h1>
+                    <p class="post-info">
+                        Posté le <?php the_date(); ?>
+                    </p>
+                    <div class="post-content">
+                        <?php the_content(); ?>
+                    </div>
+                </div>
             <?php endwhile; // end of the loop. ?>
         </article>
     </main>
