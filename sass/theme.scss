@@ -1,4 +1,5 @@
-@import "theme/theme_variables"; // <--------- Add your variables into this file. Also add variables to overwrite Bootstrap variables here
+@import "theme/theme_variables";
+// <--------- Add your variables into this file. Also add variables to overwrite Bootstrap variables here
 @import url('https://fonts.googleapis.com/css?family=Oswald:300,400');
 
 body {
@@ -6,11 +7,11 @@ body {
   color: #fff;
   font-family: 'Oswald', sans-serif;
   font-weight: 300;
-  a{
-    color:$special-yellow;
+  a {
+    color: $special-yellow;
   }
-  a:hover{
-    color:$special-yellow;
+  a:hover {
+    color: $special-yellow;
   }
 }
 
@@ -26,15 +27,15 @@ header {
   }
 }
 
-main{
+main {
   min-height: 80vh;
 }
 
-#navbarNavDropdown{
+#navbarNavDropdown {
   font-weight: 400;
-  letter-spacing:1.5px;
-  a.nav-link:hover{
-    color:$special-yellow;
+  letter-spacing: 1.5px;
+  a.nav-link:hover {
+    color: $special-yellow;
   }
 }
 
@@ -44,12 +45,12 @@ main{
   color: #fff;
 }
 
-.dropdown-menu{
+.dropdown-menu {
   background: $primary-color;
 }
 
 .navbar-toggler {
-  border-color: rgba(224,183,77, 0.5);
+  border-color: rgba(224, 183, 77, 0.5);
   .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(224,183,77, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
   }
@@ -67,10 +68,10 @@ main{
   letter-spacing: 1.5px;
 }
 
-.btn-theme:hover{
+.btn-theme:hover {
   background: $primary-color;
   opacity: 0.8;
-  color:$special-yellow;
+  color: $special-yellow;
   text-decoration: none;
 }
 
@@ -88,13 +89,13 @@ main{
   h1 {
     text-transform: uppercase;
     font-size: 70px;
-    letter-spacing:1px;
+    letter-spacing: 1px;
   }
 }
 
 #beerOfTheMonth {
   .beerDescription {
-    position:relative;
+    position: relative;
     min-height: 450px;
     background: white;
     color: $primary-color;
@@ -131,9 +132,9 @@ main{
 
     text-align: center;
     .btn-theme {
-      position:absolute;
+      position: absolute;
       bottom: 15px;
-      right:15px;
+      right: 15px;
     }
 
   }
@@ -172,6 +173,7 @@ main{
 
     h2 {
       color: $special-yellow;
+      font-size: 1.5em;
       font-weight: 700;
       text-transform: uppercase;
       text-align: center;
@@ -182,8 +184,8 @@ main{
       opacity: 1;
     }
     a.btn-theme {
-      display:block;
-      width: 150px;
+      display: block;
+      width: 170px;
       text-align: center;
       position: absolute;
       bottom: 50px;
@@ -294,7 +296,10 @@ footer {
     article {
       height: 600px;
       width: 50%;
-      .text{
+      h2{
+        font-size: 2em;
+      }
+      .text {
         padding: 20%;
       }
     }
@@ -313,6 +318,15 @@ footer {
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+  #beerOfTheMonth .beerDescription {
+    padding: 30px 50px;
+    .btn-theme {
+      bottom: 30px;
+      right: 25%;
+      left: 25%;
+    }
+  }
+
   #lastArticleMain {
     article {
       width: 33.333%;

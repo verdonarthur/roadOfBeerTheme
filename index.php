@@ -58,7 +58,7 @@ get_header();
                              style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>') "></div>
                         <div class="text container-fluid">
                             <h2><?php the_title(); ?></h2>
-                            <p><?php echo wp_trim_words(get_the_content(), 55, '...'); ?></p>
+                            <p><?php echo wp_trim_words(do_shortcode(get_the_content(), 55, '...')); ?></p>
                             <a class="btn-theme" href="<?php echo wp_get_shortlink(); ?> ">En savoir plus</a>
                         </div>
 
@@ -68,12 +68,38 @@ get_header();
             <?php else : ?>
                 <p><?php esc_html_e('Sorry, no posts matched your criteria.'); ?></p>
             <?php endif; ?>
-</div>
+
 </section>
 
 </main>
 
 </div>
-
+<div id="warning" class="modal" tabindex="-1" role="dialog" style="color:black">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><strong>Attention !</strong></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="J'accepte">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p> Ce projet a été développé dans le cadre d’un cours marketing de la <a
+                            href="http://www.comem.ch">HEIG-VD</a> et est
+                    purement fictif</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    window.onload = function () {
+        $("#warning").modal("show")
+    }
+</script>
 
 <?php get_footer(); ?>
