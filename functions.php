@@ -9,13 +9,13 @@ if (!function_exists('init_script_and_style')) {
          */
         require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
 
-        wp_enqueue_style('bootstrap-style', get_stylesheet_directory_uri() . '/css/bootstrap.min.css');
-        wp_enqueue_style('font-awesome', get_stylesheet_directory_uri() . '/css/font-awesome.min.css');
-        wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/theme.min.css');
+        wp_enqueue_style('bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css');
+        wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css');
+        wp_enqueue_style('theme-style', get_template_directory_uri() . '/css/theme.min.css');
 
-        wp_enqueue_script('jquery-prod', get_stylesheet_directory_uri() . '/js/jquery.min.js', array(), '1.0.0', true);
-        wp_enqueue_script('popper', get_stylesheet_directory_uri() . '/js/popper.min.js', array(), '1.0.0', true);
-        wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array(), '1.0.0', true);
+        wp_enqueue_script('jquery-prod', get_template_directory_uri() . '/js/jquery.min.js', array(), '1.0.0', true);
+        wp_enqueue_script('popper', get_template_directory_uri() . '/js/popper.min.js', array(), '1.0.0', true);
+        wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '1.0.0', true);
 
     }
 
@@ -24,3 +24,4 @@ if (!function_exists('init_script_and_style')) {
 
 //plugin loading
 require 'plugin/beerofthemonth.php';
+require 'plugin/asso-event.php';

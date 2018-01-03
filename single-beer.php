@@ -28,14 +28,19 @@ get_header();
 
                 $beer_description = esc_html(get_post_meta(get_the_ID(), 'beer_description', true));
 
+                $image_alt = get_post_meta( $beer_picture, '_wp_attachment_image_alt', true);
+
+                if ( empty( $image_alt )) {
+                    $image_alt = get_the_title();;
+                }
                 ?>
                 <div class="col-md-4">
-                    <img src="<?php echo $beer_picture_src[0]; ?>" class="img-fluid">
+                    <img src="<?php echo $beer_picture_src[0]; ?>" class="img-fluid" alt="<?php echo $image_alt; ?>">
                 </div>
                 <div class="col-md-8">
                     <h1 class="post-title"><?php the_title(); ?></h1>
                     <p class="post-info">
-                        Posté le <?php the_date(); ?> dans <?php the_category(', '); ?> par <?php the_author(); ?>.
+                        Posté le <?php the_date(); ?>
                     </p>
                     <div class="post-content">
                         <p><?php echo $beer_description ?></p>

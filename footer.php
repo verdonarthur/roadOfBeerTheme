@@ -28,14 +28,13 @@ $the_theme = wp_get_theme();
         <div class="col-md-4">
             <h2>Social</h2>
             <div class="social-share">
-                <a href="https://www.instagram.com/redgull.ch/?hl=fr" class="instagram-share"><i
-                            class="fa fa-instagram"></i></a> <a href="https://www.facebook.com/RedGull.ch/"
+                <a href="#" class="instagram-share"><i
+                            class="fa fa-instagram"></i></a> <a href="https://www.facebook.com/routedesbieres.ch/"
                                                                 class="facebook-share"><i
                             class="fa fa-facebook"></i></a>
             </div>
         </div>
     </div>
-    <!--<div class="row"><p>webmasters: Arthur Verdon, Audrey Hugenin et Juan Morenop</p></div>-->
 </footer><!-- #colophon -->
 <?php wp_footer(); ?>
 

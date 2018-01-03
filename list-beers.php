@@ -8,13 +8,14 @@
 get_header();
 
 ?>
-    <div class="container">
-        <main class="row">
+    <main class="container-fluid">
+        <div class="card-columns">
             <?php
             $mypost = array('post_type' => 'beer',);
             $loop = new WP_Query($mypost);
             ?>
-            <?php while ($loop->have_posts()) : $loop->the_post();
+            <?php while ($loop->have_posts()) :
+                $loop->the_post();
 
                 $isbeerofthemonth = esc_html(get_post_meta(get_the_ID(), 'isbeerofthemonth', true));
                 $beer_brewery = esc_html(get_post_meta(get_the_ID(), 'beer_brewery', true));
@@ -33,24 +34,29 @@ get_header();
 
                 $beer_description = esc_html(get_post_meta(get_the_ID(), 'beer_description', true));
 
+                $image_alt = get_post_meta( $beer_picture, '_wp_attachment_image_alt', true);
+
+                if ( empty( $image_alt )) {
+                    $image_alt = get_the_title();;
+                }
+
                 ?>
-                <article class="col-md-6 container-fluid">
-                    <div class="row">
-                        <div class="col-3">
-                            <?php if (is_array($beer_picture_src)) : ?>
-                                <img class="img-fluid" src="<?php echo $beer_picture_src[0] ?>"/>
-                            <?php endif; ?>
-                        </div>
-                        <div class="col-9">
-                            <h2><?php the_title(); ?></h2>
-                            <p><?php echo $beer_description ?></p>
-                        </div>
+                <article class="card text-black" style="color:black;border:none;">
+                    <?php if (is_array($beer_picture_src)) : ?>
+                        <img class="card-img-top" src="<?php echo $beer_picture_src[0] ?> " alt="<?php echo $image_alt; ?>"/>
+                    <?php endif; ?>
+                    <div class="card-body">
+                        <h2 class="card-title"><?php the_title(); ?></h2>
+
+                        <p class="card-text"><?php echo wp_trim_words($beer_description, 30, '...'); ?></p>
+                        <a class="btn-theme" href="<?php echo wp_get_shortlink(); ?> ">En savoir plus</a>
                     </div>
                 </article>
 
             <?php endwhile; ?>
-        </main>
-    </div>
+
+        </div>
+    </main>
 
 <?php wp_reset_query(); ?>
 <?php get_footer(); ?>
