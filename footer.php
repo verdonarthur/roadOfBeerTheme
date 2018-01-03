@@ -28,10 +28,10 @@ $the_theme = wp_get_theme();
         <div class="col-md-4">
             <h2>Social</h2>
             <div class="social-share">
-                <a href="#" class="instagram-share"><i class="fa fa-instagram"></i></a>
-                <a href="https://www.facebook.com/routedesbieres.ch/" class="facebook-share">
-                    <i class="fa fa-facebook"></i>
-                </a>
+                <a href="#" class="instagram-share"><i
+                            class="fa fa-instagram"></i></a> <a href="https://www.facebook.com/routedesbieres.ch/"
+                                                                class="facebook-share"><i
+                            class="fa fa-facebook"></i></a>
             </div>
         </div>
     </div>
