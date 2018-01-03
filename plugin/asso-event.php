@@ -84,12 +84,12 @@ function display_asso_event_meta_box($asso_event)
     <table id="asso_event_form">
         <tr>
             <td style="width: 100%">Date de début</td>
-            <td><input id="from" type="date" size="80" name="asso_event_date_begin"
+            <td><input id="from" type="text" size="80" name="asso_event_date_begin"
                        value="<?php echo $asso_event_date_begin; ?>"/></td>
         </tr>
         <tr>
             <td style="width: 100%">Date de fin</td>
-            <td><input id="to" type="date" size="80" name="asso_event_date_end"
+            <td><input id="to" type="text" size="80" name="asso_event_date_end"
                        value="<?php echo $asso_event_date_end; ?>"/>
             </td>
         </tr>

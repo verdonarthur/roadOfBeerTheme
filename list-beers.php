@@ -49,7 +49,7 @@ get_header();
                         <h2 class="card-title"><?php the_title(); ?></h2>
 
                         <p class="card-text"><?php echo wp_trim_words($beer_description, 30, '...'); ?></p>
-                        <a class="btn-theme" href="<?php echo wp_get_shortlink(); ?> ">En savoir plus</a>
+                        <a class="btn-theme" href="<?php echo get_permalink(); ?> ">En savoir plus</a>
                     </div>
                 </article>
 

@@ -31,7 +31,7 @@ get_header();
                     <?php endif; ?>
                     <div class="card-body">
                         <h2 class="card-title"><?php the_title(); ?></h2>
-                        <h4 class="card-subtitle mb-2 text-muted"><?php echo 'Le ' . date("d/m/y à H:m", strtotime($asso_event_date_begin)); ?></h4>
+                        <h4 class="card-subtitle mb-2 text-muted"><?php echo 'Le ' . date("d/m/y à H:i", strtotime($asso_event_date_begin)); ?></h4>
                         <p class="card-text"><?php echo wp_trim_words(get_the_content(), 30, '...'); ?></p>
                         <a class="btn-theme" href="<?php echo wp_get_shortlink(); ?> ">En savoir plus</a>
                     </div>

@@ -20,7 +20,7 @@ get_header();
                          alt="<?php echo get_post_meta(get_post_thumbnail_id($post->ID), '_wp_attachment_image_alt', true); ?>">
                 </div>
                 <div class="col-md-8">
-                    <h1 class="post-title"><?php echo 'Le ' . date("d/m/Y à H:m", strtotime($asso_event_date_begin)) . '<br>';
+                    <h1 class="post-title"><?php echo 'Le ' . date("d/m/Y à H:i", strtotime($asso_event_date_begin)) . '<br>';
                         the_title(); ?></h1>
                     <p class="post-info">
                         Posté le <?php the_date(); ?>

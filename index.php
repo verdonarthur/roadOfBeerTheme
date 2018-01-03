@@ -84,7 +84,7 @@ get_header();
                 </button>
             </div>
             <div class="modal-body">
-                <p> Ce projet a été développé dans le cadre d’un cours marketing de la <a
+                <p> Ce projet a été développé dans le cadre d’un cours de marketing digital de la <a
                             href="http://www.comem.ch">HEIG-VD</a> et est
                     purement fictif</p>
             </div>
